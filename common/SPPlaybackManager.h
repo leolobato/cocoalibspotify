@@ -49,6 +49,14 @@
  */
 -(void)playbackManagerWillStartPlayingAudio:(SPPlaybackManager *)aPlaybackManager;
 
+@optional
+
+/** Called when playback stops naturally, at the end of a track.
+ 
+ @param aPlaybackManager The playback manager that finished playing track.
+ */
+-(void)playbackManagerDidEndTrackPlayback:(SPPlaybackManager *)aPlaybackManager;
+
 @end
 
 /**

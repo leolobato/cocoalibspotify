@@ -205,7 +205,11 @@ static void * const kSPPlaybackManagerKVOContext = @"kSPPlaybackManagerKVOContex
 }
 
 -(void)sessionDidEndPlaybackOnMainThread:(SPSession *)aSession {
-	self.currentTrack = nil;	
+	self.currentTrack = nil;
+    
+    if ([self.delegate respondsToSelector:@selector(playbackManagerDidEndTrackPlayback:)]) {
+        [self.delegate playbackManagerDidEndTrackPlayback:self];
+    }
 }
 
 
